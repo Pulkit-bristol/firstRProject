@@ -15,7 +15,7 @@ f0s -> this will be a new variable to save f0 for the next operation
 max_fibo_number <- function(num,f0,f1,f0s,s){
   if(s<num){
     s = f0+f1
-    print(cat(num,f0,f1, s))
+    #print(cat(num,f0,f1, s))
     max_fibo_number(num,f1,s,f0,s)
   }
   else{
