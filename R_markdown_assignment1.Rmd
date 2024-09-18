@@ -1,0 +1,120 @@
+---
+title: "Assignment 1"
+author: "Pulkit"
+date: "2024-09-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+install.packages("jquerylib")
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+1. Create a data frame
+```{r, echo=FALSE}
+animal = c("Snake","Ostrich","Cat","Spider")
+animal
+num_legs = c(0,2,4,8)
+num_legs
+animals_df = data.frame(animal = animal, num_legs = num_legs)
+animals_df
+```
+
+2. Check and delete objects
+```{r, echo=FALSE}
+ls()
+rm(num_legs)
+
+# remove all objects in R
+rm(list=setdiff(ls(), "x"))
+```
+
+4.Create a dataframe in R markdown
+```{r, echo=FALSE}
+animal = c("Snake","Ostrich","Cat","Spider")
+animal
+num_legs = c(0,2,4,8)
+num_legs
+animals_df = data.frame(animal = animal, num_legs = num_legs)
+animals_df
+```
+5. Matrix Operations
+```{r, echo = False}
+X = c(seq(12,2,-2))
+X
+X = matrix(x_vect,2,3)
+X
+Y = matrix(seq(4),2,2)
+Y
+Z = matrix(seq(4,10,2),2,2)
+Z
+#Addition
+Y+Z
+# Matrix multiplication
+Y%*%X
+#X%*%Y  #Error in X %*% Y : non-conformable arguments
+
+# Inverse
+Y%*%solve(Y)
+solve(Y)%*%X
+```
+6. Writing a function within R
+```{r, echo = False}
+myFirstFunc <- function(n){
+  add = 0
+  for(i in 2:n-1){
+    if(i%%2==0 | i%%7==0){
+      add = add+i
+    }
+  }
+  return(add)
+}
+myFirstFunc(14)
+myFirstFunc(1000)
+```
+7. Further R markdown
+## Wave plot
+"\[\sin(x)=\sum_{n=1}^{\infty}(-1)^{n+1}\cdot \frac{x^{2n-1}}{(2n-1)!}
+\approx x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}\ldots. \]"
+
+
+```{r, echo = False}
+x = seq(0,20,0.01)
+x
+y = sin(x)
+y
+sin_df = data.frame(x=x,y=y)
+head(sin_df,3)
+plot(sin_df)
+```
+
+8. Version Control in R
+```{r, echo = False}
+#install.packages("usethis") 
+library(usethis)
+use_git_config(user.name = "Pulkit-bristol", user.email = "gl24171@bristol.ac.uk")
+
+# 8.2
+
+```
