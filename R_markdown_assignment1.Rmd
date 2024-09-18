@@ -7,7 +7,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-install.packages("jquerylib")
+#install.packages("jquerylib")
 ```
 
 ## R Markdown
@@ -63,7 +63,7 @@ animals_df
 ```{r, echo = False}
 X = c(seq(12,2,-2))
 X
-X = matrix(x_vect,2,3)
+X = matrix(X,2,3)
 X
 Y = matrix(seq(4),2,2)
 Y
